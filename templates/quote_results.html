@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ stock_info.symbol }}
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <h1 class="display-3">Stock Info</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in stock_info %}
+                <tr>
+                    <th scope="row">{{ data }}</th>
+                    <td>{{ stock_info[data] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
